@@ -1,7 +1,7 @@
 _This project was an old commission and is here for archive purposes, not actively worked on_
 
 # BungeeQueue
-A Bukkit plugin that allows players to queue, using priority, to join different servers connected via BungeeCord.
+A Bukkit plugin that allows players to queue, using priority, to join different servers connected via BungeeCord.  
 Created for Bukkit 1.7.9
 
 ## Dependencies
