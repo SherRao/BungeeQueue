@@ -1,0 +1,15 @@
+name: BungeeQueue
+version: 1.1_MC-1.7.10
+description: BungeeQueue
+author: SherRao
+
+main: tk.sherrao.bukkit.bungeequeue.BungeeQueue
+prefix: BungeeQueue
+database: false
+
+commands:
+    queue:
+        description: Allows players to queue for a BungeeCord Server
+        aliases: [] 
+        
+        

@@ -1,0 +1,154 @@
+#################################
+#                               #
+#   BungeeQueue - Config File   #
+#                               #
+#     Developed by SherRao      #
+#                               #
+#################################
+#
+#
+# <--- Anything with this before it means it is a comment, it can be changed to your liking
+# You can even add your own comments!
+#
+#
+# [Color Codes]
+# Color codes (the '&' symbol) can be used for formatting in strings
+# You can find a list of all color codes here: http://wiki.ess3.net/mc/
+#
+#
+# [Sound ID's] 
+# Sound ID's can be used where necessary 
+# You can find Sound ID's for each Minecraft version here:
+#
+# (1.7) https://jd.bukkit.org/org/bukkit/Sound.html
+# (1.8) https://web.archive.org/web/20150919165359/https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+# (1.9) https://web.archive.org/web/20150919025029/https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+# (Latest) https://hub.spigotmc.org/javadocs/spigot
+#
+
+
+# Should BungeeQueue be enabled?
+#  Acceptable = [true|false]
+enabled: true
+
+# Should the plugin log all messages or just error messages to the console?
+#  Acceptable = [true|false]
+verbose: true
+
+# The BungeeCord server information
+bungee:
+
+    # The name of the server to teleport players to 
+    #  Acceptable = [String/Color Codes]
+    server-name: "server2"
+    
+    # The IP of the server to teleport players to
+    ip: "localhost"
+    
+    # The port of the server to teleport players to
+    port: "25567"
+
+
+# The delay between each tp-request and pinging players with their queue position
+#  Acceptable = [Whole number in seconds]
+delay-betweem-queue-ping: 10
+
+
+# The amount of players to teleport per check
+#  Acceptable = [Whole number]
+tp-players-per-check: 2
+
+##################################
+# Global configuration for signs #
+##################################
+sign:
+
+    # What text should be used to register a sign as a BungeeQueue Sign?
+    prefix: "[BungeeQueue]"
+    
+    # What text should the sign change to?
+    change-to: 
+        - "&bIn Queue:"
+        - "&0Normal: [reg]"
+        - "&cVIP: [vip]"
+        - "&6God: [god]"
+        
+    # Should you join the queue if you left-click a BungeeQueue sign?
+    queue-on-left-click: false
+    
+    # Should you join the queue if you right-click a BungeeQueue sign?
+    queue-on-right-click: true
+
+
+###########################################
+# Global configuration for queue-priority #
+###########################################
+priority:
+
+    # The permissions that you'd like to add/remove with their percentages/100%
+    # (NOTE**: ALL PERMISSION IN TOTAL SHOULD ADD UP TO 100, NOTHING MORE)
+    # (NOTE**: ALL PERMISSIONS MUST KEEP THE 'bungeequeue.priority.' PREFIX!! )
+    permissions:
+        - "bungeequeue.priority.regular:0.05"
+        - "bungeequeue.priority.donator:0.20"
+        - "bungeequeue.priority.vip:0.25"
+        - "bungeequeue.priority.god:0.50"
+
+
+##########################################
+# Global configuration for plugin-sounds #
+##########################################
+#
+# Acceptable = [Sound ID's]
+sounds:
+
+    queue-join: "ANVIL_USE"
+    queue-ping: "NOTE_PLING"
+    already-in-queue: "BLAZE_DEATH"
+    tp-to-server: "ANVIL_BREAK"
+    
+    sign-place-success: "ANVIL_USE"
+    sign-place-failure: "ANVIL_BREAK"
+    
+    sign-destroy-success: "ANVIL_BREAK"
+    sign-destroy-failure: "BAT_DEATH"
+    
+############################################
+# Global configuration for plugin-messages #
+############################################
+#
+# Acceptable = [String/Color Codes]
+messages:
+
+    # Messages sent when a command tries to be executed by a command-sender (player, console, etc..)
+    command:
+
+        # When the player doesn't have permission to use the command
+        no-perms: "&cSorry! But you don't have permission to do that!"
+        
+        # When the executor of a command is the console
+        sender-is-console: "&cOnly a player can perform that command!"
+    
+    
+    # Messages related to player-queueing
+    # (Check placeholders.txt for valid placeholders)
+    queue:
+    
+        # When a player successfully queues for a server
+        queue-join: "&aYou have queued to join [bungee-server-name] (Position: [pos] out of [max-pos])"
+
+        # When a player gets pinged of their position
+        queue-ping: "&aYou are now in position [pos] out of [max-pos] to join [bungee-server-name] with a [chance]% chance of joining..."
+        
+        # When a player has already queued for a server, but tries again
+        already-in-queue: "&cYou have already queued to join [server-name]"
+            
+        # When a player is getting tp-ed to the other server
+        tp-to-server: "&aPosition selected! You are now being teleported!"
+               
+        # When a player creates a BungeeQueue sign
+        sign-place: "&aYou have successfully created a BungeeQueue sign!"
+        
+        # When a player destroys a BungeeQueue sign
+        sign-destroy: "&aYou have successfully destroyed a BungeeQueue sign!"
+                
